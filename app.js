@@ -8,9 +8,12 @@ const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
 mongoose.connect(
-  "mongodb+srv://intvergil:VTd2M2stTXVMrLIn@cluster0-pufcf.mongodb.net/test?retryWrites=true",
+  "mongodb+srv://intvergil:" +
+    process.env.MONGO_ATLAS_PW +
+    "@cluster0-pufcf.mongodb.net/test?retryWrites=true",
   { useNewUrlParser: true }
 );
+mongoose.Promise = global.Promise;
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
