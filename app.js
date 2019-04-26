@@ -9,9 +9,11 @@ const orderRoutes = require("./api/routes/orders");
 const userRoutes = require("./api/routes/user");
 
 mongoose.connect(
-  "mongodb+srv://intvergil:" +
-    process.env.MONGO_ATLAS_PW +
-    "@cluster0-pufcf.mongodb.net/test?retryWrites=true",
+  // "mongodb+srv://intvergil:" +
+  //   process.env.MONGO_ATLAS_PW +
+  //   "@cluster0-pufcf.mongodb.net/test?retryWrites=true",
+  // "mongodb+srv://intvergil:VTd2M2stTXVMrLIn@cluster0-pufcf.mongodb.net/test?retryWrites=true",
+  process.env.MONGO_URL,
   { useNewUrlParser: true }
 );
 mongoose.set('useCreateIndex', true)
